@@ -24,7 +24,7 @@ module.exports = function (plop) {
       },
       {
         type: "add",
-        path: "stories/{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
+        path: "ui/modules/{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
         templateFile: "ui/modules/templates/Module.stories.tsx.hbs",
       },
       // {
@@ -36,7 +36,13 @@ module.exports = function (plop) {
         type: "append",
         path: "ui/modules/index.ts",
         pattern: `/* DO_NOT_EDIT_IMPORT_MODULE */`,
-        template: `import { {{pascalCaseName}} } from './{{pascalCase name}}';`,
+        template: `import { {{pascalCase name}} } from './{{pascalCase name}}';`,
+      },
+      {
+        type: "append",
+        path: "ui/modules/index.ts",
+        pattern: `/* DO_NOT_EDIT_EXPORT_MODULE */`,
+        template: `{{pascalCase name}} },`,
       },
     ],
   });
