@@ -5,26 +5,37 @@ module.exports = function (plop) {
 
     prompts: [
       {
+        type: "list",
+        name: "location",
+        message: "Select type",
+        default: "modules",
+        choices: [
+          { name: "Primitive", value: "primitives" },
+          { name: "Component", value: "components" },
+          { name: "Module", value: "modules" },
+        ],
+      },
+      {
         type: "input",
         name: "name",
-        message: "Provide a module name in PascalCase:",
+        message: "Provide a name in PascalCase:",
       },
     ],
 
     actions: [
       {
         type: "add",
-        path: "ui/modules/{{pascalCase name}}/{{pascalCase name}}.tsx",
+        path: "ui/{{location}}/{{pascalCase name}}/{{pascalCase name}}.tsx",
         templateFile: "ui/modules/templates/Module.tsx.hbs",
       },
       {
         type: "add",
-        path: "ui/modules/{{pascalCase name}}/index.ts",
+        path: "ui/{{location}}/{{pascalCase name}}/index.ts",
         templateFile: "ui/modules/templates/index.ts.hbs",
       },
       {
         type: "add",
-        path: "ui/modules/{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
+        path: "ui/{{location}}/{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
         templateFile: "ui/modules/templates/Module.stories.tsx.hbs",
       },
       // {
@@ -34,66 +45,15 @@ module.exports = function (plop) {
       // },
       {
         type: "append",
-        path: "ui/modules/index.ts",
+        path: "ui/{{location}}/index.ts",
         pattern: `/* DO_NOT_EDIT_IMPORT_MODULE */`,
         template: `import { {{pascalCase name}} } from './{{pascalCase name}}';`,
       },
       {
         type: "append",
-        path: "ui/modules/index.ts",
+        path: "ui/{{location}}/index.ts",
         pattern: `/* DO_NOT_EDIT_EXPORT_MODULE */`,
-        template: `{{pascalCase name}} },`,
-      },
-    ],
-  });
-
-  plop.setGenerator("component", {
-    description: "Creates a component for design system",
-
-    prompts: [
-      {
-        type: "input",
-        name: "name",
-        message: "Provide a component name in PascalCase:",
-      },
-    ],
-
-    actions: [
-      {
-        type: "add",
-        path: "src/{{pascalCase name}}/{{pascalCase name}}.tsx",
-        templateFile: "templates/components/template.tsx.hbs",
-      },
-      {
-        type: "add",
-        path: "src/{{pascalCase name}}/index.ts",
-        templateFile: "templates/components/index.ts.hbs",
-      },
-      {
-        type: "add",
-        path: "src/{{pascalCase name}}/config.ts",
-        templateFile: "templates/components/config.ts.hbs",
-      },
-      {
-        type: "add",
-        path: "src/{{pascalCase name}}/styles.ts",
-        templateFile: "templates/components/styles.ts.hbs",
-      },
-      {
-        type: "add",
-        path: "src/{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
-        templateFile: "templates/components/story.tsx.hbs",
-      },
-      {
-        type: "add",
-        path: "src/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
-        templateFile: "templates/components/test.tsx.hbs",
-      },
-      {
-        type: "append",
-        path: "src/index.ts",
-        pattern: `/* PLOP_INJECT_COMPONENT */`,
-        template: `export * from './{{pascalCase name}}';`,
+        template: `  {{pascalCase name}},`,
       },
     ],
   });
