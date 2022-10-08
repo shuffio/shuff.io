@@ -10,9 +10,9 @@ module.exports = function (plop) {
         message: "Select type",
         default: "modules",
         choices: [
-          { name: "Primitive", value: "primitives" },
-          { name: "Component", value: "components" },
-          { name: "Module", value: "modules" },
+          { name: "primitive", value: "primitives" },
+          { name: "component", value: "components" },
+          { name: "module", value: "modules" },
         ],
       },
       {
