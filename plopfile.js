@@ -1,3 +1,12 @@
+const uiCategories = ["primitives", "components", "modules"];
+const uiTypes = ["typography"];
+
+const generateUiCategories = (categories, trimLastLetter = false) =>
+  categories.map((category) => ({
+    name: trimLastLetter ? category.slice(0, -1) : category,
+    value: category,
+  }));
+
 module.exports = function (plop) {
   /**
    * name and description of our template
@@ -11,13 +20,16 @@ module.exports = function (plop) {
       {
         type: "list",
         name: "location",
-        message: "Select type",
-        default: "modules",
-        choices: [
-          { name: "primitive", value: "primitives" },
-          { name: "component", value: "components" },
-          { name: "module", value: "modules" },
-        ],
+        message: "Select UI category:",
+        default: "primitives",
+        choices: generateUiCategories(uiCategories, true),
+      },
+      {
+        type: "list",
+        name: "type",
+        message: "Select UI type:",
+        default: "typography",
+        choices: generateUiCategories(uiTypes),
       },
       {
         type: "input",
@@ -29,17 +41,17 @@ module.exports = function (plop) {
     actions: [
       {
         type: "add",
-        path: "ui/{{location}}/{{pascalCase name}}/{{pascalCase name}}.tsx",
+        path: "ui/{{location}}/{{type}}/{{pascalCase name}}/{{pascalCase name}}.tsx",
         templateFile: "ui/templates/component.tsx.hbs",
       },
       {
         type: "add",
-        path: "ui/{{location}}/{{pascalCase name}}/index.ts",
+        path: "ui/{{location}}/{{type}}/{{pascalCase name}}/index.ts",
         templateFile: "ui/templates/index.ts.hbs",
       },
       {
         type: "add",
-        path: "ui/{{location}}/{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
+        path: "ui/{{location}}/{{type}}/{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
         templateFile: "ui/templates/component.stories.tsx.hbs",
       },
       // {
@@ -56,6 +68,18 @@ module.exports = function (plop) {
       {
         type: "append",
         path: "ui/{{location}}/index.ts",
+        pattern: `/* DO_NOT_EDIT_EXPORT_MODULE */`,
+        template: `  {{pascalCase name}},`,
+      },
+      {
+        type: "append",
+        path: "ui/{{location}}/{{type}}/index.ts",
+        pattern: `/* DO_NOT_EDIT_IMPORT_MODULE */`,
+        template: `import { {{pascalCase name}} } from './{{type}}/{{pascalCase name}}';`,
+      },
+      {
+        type: "append",
+        path: "ui/{{location}}/{{type}}/index.ts",
         pattern: `/* DO_NOT_EDIT_EXPORT_MODULE */`,
         template: `  {{pascalCase name}},`,
       },
