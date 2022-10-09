@@ -4,3 +4,7 @@
 ":books: storybook":
   - .storybook/**/*
   - ui/**/*.stories.*
+
+":factory: plop"
+  - plopfile.js
+  - ui/templates/**/*
