@@ -5,7 +5,7 @@ import { rem } from "./spacing";
 import styled, { CSSProperties } from "styled-components";
 
 export default {
-  title: "tokens/colors",
+  title: "Tokens/Colors",
   parameters: { layout: "fullscreen" },
 } as Meta;
 
