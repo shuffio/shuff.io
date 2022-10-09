@@ -8,3 +8,6 @@
 ":factory: plop":
   - plopfile.js
   - ui/templates/**/*
+
+":coin: ui/tokens":
+  - ui/tokens/**/*
