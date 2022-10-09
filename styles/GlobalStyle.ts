@@ -1,11 +1,12 @@
 import { createGlobalStyle } from "styled-components";
+import { families } from "@ui/tokens/fonts";
 
 export const GlobalStyle = createGlobalStyle`
   html,
   body {
     padding: 0;
     margin: 0;
-    font-family: "Merriweather", serif;
+    font-family: ${families.serif};
     /* font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, Segoe UI,
       Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
       sans-serif; */
