@@ -1,2 +1,10 @@
 ":pencil2: ui/typography":
   - ui/**/typography/**/*
+
+":books: storybook":
+  - .storybook/**/*
+  - ui/**/*.stories.*
+
+":factory: plop":
+  - plopfile.js
+  - ui/templates/**/*

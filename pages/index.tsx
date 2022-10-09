@@ -11,7 +11,6 @@ const Home: NextPage = () => {
           name="description"
           content="your one-stop shop for hot shuff gossip"
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Navigation />
