@@ -12,6 +12,8 @@ module.exports = function (plop) {
    * name and description of our template
    * @todo: replace with addMany
    * @see: https://plopjs.com/documentation/#addmany
+   *
+   * @todo: don't ask for type when modules is chosen
    * */
   plop.setGenerator("", {
     description: "Creates a module",
@@ -54,11 +56,6 @@ module.exports = function (plop) {
         path: "ui/{{location}}/{{type}}/{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
         templateFile: "ui/templates/component.stories.tsx.hbs",
       },
-      // {
-      //   type: "add",
-      //   path: "tests/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
-      //   templateFile: "templates/modules/test.tsx.hbs",
-      // },
       {
         type: "append",
         path: "ui/{{location}}/index.ts",
