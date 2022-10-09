@@ -9,5 +9,5 @@
   - plopfile.js
   - ui/templates/**/*
 
-":coin: ui/tokens"
+":coin: ui/tokens":
   - ui/tokens/**/*
