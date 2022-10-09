@@ -2,7 +2,7 @@ import { Meta, Story } from "@storybook/react";
 import Body from "./Body";
 
 export default {
-  title: "primitives/Body",
+  title: "Primitives/Body",
   component: Body,
   parameters: { layout: "fullscreen" },
   args: {

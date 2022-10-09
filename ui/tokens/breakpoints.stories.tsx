@@ -8,7 +8,7 @@ import styled, { CSSProperties } from "styled-components";
 const colorsArray = Object.values(brand);
 
 export default {
-  title: "tokens",
+  title: "Tokens",
   parameters: { layout: "fullscreen" },
 } as Meta;
 
