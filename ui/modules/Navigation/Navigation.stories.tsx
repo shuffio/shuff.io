@@ -8,3 +8,4 @@ export default {
 } as Meta;
 
 export const Default: Story = () => <Navigation />;
+Default.storyName = "Navigation";
