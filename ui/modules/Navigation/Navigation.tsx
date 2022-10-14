@@ -12,6 +12,6 @@ export default Navigation;
 
 const Nav = styled.nav`
   background-color: ${brand.primary};
-  padding-inline: ${navigation.small.x};
-  padding-block: ${navigation.small.y};
+  padding-inline: ${navigation.padding.x};
+  padding-block: ${navigation.padding.y};
 `;

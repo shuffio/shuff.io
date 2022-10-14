@@ -1,5 +1,5 @@
 const uiCategories = ["primitives", "components", "modules"];
-const uiTypes = ["typography"];
+const uiTypes = ["layout", "typography"];
 
 const generateUiCategories = (categories, trimLastLetter = false) =>
   categories.map((category) => ({
@@ -60,7 +60,7 @@ module.exports = function (plop) {
         type: "append",
         path: "ui/{{location}}/index.ts",
         pattern: `/* DO_NOT_EDIT_IMPORT_MODULE */`,
-        template: `import { {{pascalCase name}} } from './{{pascalCase name}}';`,
+        template: `import { {{pascalCase name}} } from './{{type}}/{{pascalCase name}}';`,
       },
       {
         type: "append",
@@ -72,7 +72,7 @@ module.exports = function (plop) {
         type: "append",
         path: "ui/{{location}}/{{type}}/index.ts",
         pattern: `/* DO_NOT_EDIT_IMPORT_MODULE */`,
-        template: `import { {{pascalCase name}} } from './{{type}}/{{pascalCase name}}';`,
+        template: `import { {{pascalCase name}} } from './{{pascalCase name}}';`,
       },
       {
         type: "append",

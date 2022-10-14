@@ -3,16 +3,12 @@ import styled, { CSSProperties } from "styled-components";
 import { families } from "@ui/tokens/fonts";
 
 export type Props = {
-  children: ReactNode | string;
+  children: ReactNode;
   fontSize?: CSSProperties["fontSize"];
   fontFamily?: CSSProperties["fontFamily"];
 };
 
-const Body: React.FC<Props> = ({
-  children,
-  fontSize = `16px`,
-  fontFamily = families.sans,
-}) => (
+const Body: React.FC<Props> = ({ children, fontSize = `16px`, fontFamily }) => (
   <StyledBody fontSize={fontSize} fontFamily={fontFamily}>
     {children}
   </StyledBody>

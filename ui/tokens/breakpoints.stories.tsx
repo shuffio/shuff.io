@@ -1,8 +1,8 @@
 import { Meta, Story } from "@storybook/react";
 import { brand } from "./colors";
 import { layout } from "./shadows";
-import { rem } from "./spacing";
-import { breakpoints, WidthType } from "./breakpoints";
+import { px, rem } from "./spacing";
+import { breakpoints } from "./breakpoints";
 import styled, { CSSProperties } from "styled-components";
 
 const colorsArray = Object.values(brand);
@@ -17,7 +17,7 @@ const BreakpointBar = () => (
     {Object.entries(breakpoints).map((breakpoint, i) => (
       <Bar key={i} barWidth={breakpoint[1]} backgroundColor={colorsArray[i]}>
         <span>
-          {breakpoint[0]}:&nbsp;{breakpoint[1]}
+          {breakpoint[0]}:&nbsp;{breakpoint[1]}px
         </span>
       </Bar>
     ))}
@@ -37,11 +37,11 @@ const Container = styled.div`
 `;
 
 const Bar = styled.div<{
-  barWidth: WidthType;
+  barWidth: number;
   backgroundColor: CSSProperties["backgroundColor"];
 }>`
   flex: 1;
-  width: ${({ barWidth }) => barWidth};
+  width: ${({ barWidth }) => px(barWidth)};
   background-color: ${({ backgroundColor }) => backgroundColor};
   max-width: 100%;
   height: 40px;

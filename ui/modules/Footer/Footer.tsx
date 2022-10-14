@@ -8,6 +8,6 @@ export default Footer;
 
 const StyledFooter = styled.footer`
   background-color: ${brand.secondary};
-  padding-inline: ${footer.small.x};
-  padding-block: ${footer.small.y};
+  padding-inline: ${footer.padding.x};
+  padding-block: ${footer.padding.y};
 `;
