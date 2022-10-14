@@ -15,6 +15,9 @@ export const rem = sizes.reduce<Spaces>(
   {} as Spaces
 );
 
+/** Converts `sizes` unit to rem */
+export const px = (pixels: number) => `${pixels}px`;
+
 export const layout = {
   small: {
     x: rem[16],

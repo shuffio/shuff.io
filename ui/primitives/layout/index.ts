@@ -1,10 +1,8 @@
 /* DO_NOT_EDIT_IMPORT_MODULE */
-import { Container } from "./layout/Container";
-import { Body } from "./typography/Body";
+import { Container } from "./Container";
 
 // prettier-ignore
 export {
   /* DO_NOT_EDIT_EXPORT_MODULE */
   Container,
-  Body,
 };

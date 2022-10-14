@@ -7,5 +7,5 @@ export default {
   parameters: { layout: "fullscreen" },
 } as Meta;
 
-export const Default: Story = () => <{{pascalCase name}} />;
+export const Default: Story = (args) => <{{pascalCase name}} {...args} />;
 Default.storyName = "{{pascalCase name}}";
