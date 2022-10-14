@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Main, Navigation, Footer } from "@ui/modules";
+import { Body, Container } from "@ui/primitives";
 
 const Home: NextPage = () => {
   return (
@@ -13,9 +14,15 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <Navigation />
+      {/* <Navigation />
       <Main />
-      <Footer />
+      <Footer /> */}
+      <Container>
+        <Body>
+          Welcome to the absolutely, brand-spanking new home for{" "}
+          <strong>shuff.io</strong>!
+        </Body>
+      </Container>
     </>
   );
 };

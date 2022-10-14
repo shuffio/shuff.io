@@ -5,9 +5,7 @@ const sizes = [
   2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120,
 ] as const;
 
-type Spaces = {
-  [key in typeof sizes[number]]: `${number}rem`;
-};
+type Spaces = { [key in typeof sizes[number]]: `${number}rem` };
 
 /** Converts `sizes` unit to rem */
 export const rem = sizes.reduce<Spaces>(
@@ -15,26 +13,27 @@ export const rem = sizes.reduce<Spaces>(
   {} as Spaces
 );
 
-/** Converts `sizes` unit to rem */
+/** Converts `sizes` unit to px */
 export const px = (pixels: number) => `${pixels}px`;
 
 export const layout = {
-  small: {
+  maxWidth: px(1200),
+  padding: {
     x: rem[16],
     y: rem[24],
   },
 };
 
 export const navigation = {
-  small: {
-    x: layout.small.x,
+  padding: {
+    x: layout.padding.x,
     y: rem[24],
   },
 };
 
 export const footer = {
-  small: {
-    x: layout.small.x,
+  padding: {
+    x: layout.padding.x,
     y: rem[24],
   },
 };

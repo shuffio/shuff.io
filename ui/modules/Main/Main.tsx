@@ -13,6 +13,6 @@ export default Main;
 
 const StyledMain = styled.main`
   background-color: ${brand.light};
-  padding-inline: ${layout.small.x};
-  padding-block: ${layout.small.y};
+  padding-inline: ${layout.padding.x};
+  padding-block: ${layout.padding.y};
 `;

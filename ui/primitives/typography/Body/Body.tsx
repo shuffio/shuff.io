@@ -3,7 +3,7 @@ import styled, { CSSProperties } from "styled-components";
 import { families } from "@ui/tokens/fonts";
 
 export type Props = {
-  children: ReactNode | string;
+  children: ReactNode;
   fontSize?: CSSProperties["fontSize"];
   fontFamily?: CSSProperties["fontFamily"];
 };
