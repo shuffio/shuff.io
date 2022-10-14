@@ -7,6 +7,7 @@ type LayoutProps = {
   backgroundColor?: WithBreakpoints<CSSProperties["backgroundColor"]>;
   background?: WithBreakpoints<CSSProperties["background"]>;
   height?: WithBreakpoints<CSSProperties["height"]>;
+  minHeight?: WithBreakpoints<CSSProperties["minHeight"]>;
   padding?: WithBreakpoints<CSSProperties["padding"]>;
   horizontalPosition?: "left" | "center" | "right";
   verticalPosition?: "top" | "center" | "bottom";
@@ -45,6 +46,8 @@ const StyledLayout = styled.section<StyledLayoutProps>`
   flex-direction: column;
   ${({ styledHeight }) =>
     styledHeight && toBreakpointStyles(styledHeight, "height")};
+  ${({ minHeight }) =>
+    minHeight && toBreakpointStyles(minHeight, "min-height")};
   ${({ padding }) => padding && toBreakpointStyles(padding, "padding")};
   ${({ backgroundColor }) =>
     backgroundColor && toBreakpointStyles(backgroundColor, "background-color")};
