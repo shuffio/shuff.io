@@ -8,11 +8,7 @@ export type Props = {
   fontFamily?: CSSProperties["fontFamily"];
 };
 
-const Body: React.FC<Props> = ({
-  children,
-  fontSize = `16px`,
-  fontFamily = families.sans,
-}) => (
+const Body: React.FC<Props> = ({ children, fontSize = `16px`, fontFamily }) => (
   <StyledBody fontSize={fontSize} fontFamily={fontFamily}>
     {children}
   </StyledBody>

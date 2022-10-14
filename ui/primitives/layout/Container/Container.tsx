@@ -1,14 +1,15 @@
-import { ReactNode } from "react";
+import { ReactNode, HTMLAttributes } from "react";
 import styled, { CSSProperties } from "styled-components";
 import { WithBreakpoints, toBreakpointStyles } from "@ui/tokens/breakpoints";
 import { layout } from "@ui/tokens/spacing";
 
 type ContainerProps = {
-  children: ReactNode;
+  children?: ReactNode;
   backgroundColor?: WithBreakpoints<CSSProperties["backgroundColor"]>;
   maxWidth?: WithBreakpoints<CSSProperties["maxWidth"]>;
   padding?: WithBreakpoints<CSSProperties["padding"]>;
-};
+  centered?: boolean;
+} & HTMLAttributes<HTMLElement>;
 
 const defaults: Omit<ContainerProps, "children"> = {
   maxWidth: layout.maxWidth,
@@ -30,7 +31,7 @@ export default Container;
 
 const StyledContainer = styled.div<ContainerProps>`
   width: 100%;
-  margin-inline: auto;
+  ${({ centered }) => centered && "margin-inline: auto"};
   ${({ backgroundColor }) =>
     backgroundColor && toBreakpointStyles(backgroundColor, "background-color")};
   ${({ maxWidth }) => maxWidth && toBreakpointStyles(maxWidth, "max-width")};
