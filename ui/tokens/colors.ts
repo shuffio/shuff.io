@@ -1,14 +1,24 @@
-export const white = `#F9FDDC`;
-export const gold = `#F9C555`;
-export const red = `tomato`;
-export const brown = `#D58756`;
-export const green = `#4E6A5C`;
-export const black = `#465048`;
+import { CSSProperties } from "styled-components";
 
-export const brand = {
-  light: white,
-  primary: gold,
-  secondary: brown,
-  tertiary: green,
-  dark: black,
+export type ColorsType = { [name: string]: CSSProperties["color"] };
+
+export const rainbow: ColorsType = {
+  red: `#EB5A5D`,
+  orange: `#F3714B`,
+  yellow: `#F8B67A`,
+  green: `#28616C`,
+  darkGreen: `#0A1E23`,
+};
+
+export const neutrals: ColorsType = {
+  white: `#F9FDDC`,
+  black: `#101316`,
+};
+
+export const brand: ColorsType = {
+  light: neutrals.white,
+  primary: rainbow.yellow,
+  secondary: rainbow.red,
+  tertiary: rainbow.green,
+  dark: neutrals.black,
 };

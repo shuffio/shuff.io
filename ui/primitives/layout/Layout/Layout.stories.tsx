@@ -4,7 +4,7 @@ import { brand } from "@ui/tokens/colors";
 import Layout from "./Layout";
 
 export default {
-  title: "Primitives/Layout",
+  title: "Primitives/Layout/Layout",
   component: Layout,
   parameters: { layout: "fullscreen" },
   args: {

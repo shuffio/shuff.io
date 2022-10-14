@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react";
-import { brand } from "./colors";
+import { brand, neutrals, rainbow, ColorsType } from "./colors";
 import { layout } from "./shadows";
 import { rem } from "./spacing";
 import styled, { CSSProperties } from "styled-components";
@@ -9,9 +9,9 @@ export default {
   parameters: { layout: "fullscreen" },
 } as Meta;
 
-const ColorGrid = () => (
+const ColorGrid: React.FC<{ spectrum: ColorsType }> = ({ spectrum }) => (
   <Grid>
-    {Object.entries(brand).map((color, i) => (
+    {Object.entries(spectrum).map((color, i) => (
       <Color key={i} backgroundColor={color[1]}>
         <span>{color[0]}</span>
       </Color>
@@ -19,7 +19,9 @@ const ColorGrid = () => (
   </Grid>
 );
 
-export const Brand: Story = () => <ColorGrid />;
+export const Rainbow: Story = () => <ColorGrid spectrum={rainbow} />;
+export const Neutral: Story = () => <ColorGrid spectrum={neutrals} />;
+export const Brand: Story = () => <ColorGrid spectrum={brand} />;
 
 const Grid = styled.div`
   display: flex;
@@ -30,7 +32,7 @@ const Grid = styled.div`
   }
 `;
 
-const Color = styled.div<{ backgroundColor: CSSProperties["backgroundColor"] }>`
+const Color = styled.div<{ backgroundColor: any }>`
   background-color: ${({ backgroundColor }) => backgroundColor};
   box-shadow: ${layout.close};
 

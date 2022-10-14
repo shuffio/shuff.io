@@ -5,6 +5,7 @@ import { WithBreakpoints, toBreakpointStyles } from "@ui/tokens/breakpoints";
 type LayoutProps = {
   children: ReactNode;
   backgroundColor?: WithBreakpoints<CSSProperties["backgroundColor"]>;
+  background?: WithBreakpoints<CSSProperties["background"]>;
   height?: WithBreakpoints<CSSProperties["height"]>;
   padding?: WithBreakpoints<CSSProperties["padding"]>;
   horizontalPosition?: "left" | "center" | "right";
@@ -47,6 +48,8 @@ const StyledLayout = styled.section<StyledLayoutProps>`
   ${({ padding }) => padding && toBreakpointStyles(padding, "padding")};
   ${({ backgroundColor }) =>
     backgroundColor && toBreakpointStyles(backgroundColor, "background-color")};
+  ${({ background }) =>
+    background && toBreakpointStyles(background, "background")};
   ${({ horizontalPosition }) =>
     horizontalPosition &&
     toBreakpointStyles(convertPositionProp(horizontalPosition), "align-items")};
