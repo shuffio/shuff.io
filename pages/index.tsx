@@ -18,12 +18,12 @@ const Home: NextPage = () => {
       </Head>
 
       <Layout
-        height="100vh"
+        minHeight="100vh"
         background={`linear-gradient(${brand.secondary} 0%, ${brand.primary} 10%, ${brand.light} 50%)`}
         horizontalPosition="left"
         verticalPosition="center"
       >
-        <Container maxWidth={layout.maxWidth} padding={rem[40]}>
+        <Container maxWidth={layout.maxWidth} padding={rem[24]}>
           <Headline margin={`0 0 ${rem[40]}`}>
             Welcome to the absolutely, brand-spanking new home for{" "}
             <strong
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
             </strong>
             !
           </Headline>
-          <Body fontSize="22px" maxWidth="820px">
+          <Body maxWidth="820px">
             We&apos;re working hard behind the scenes to bring a super cool
             experience to shuffleboard fans everywhere. Check back soon and
             maybe something new will be here!

@@ -5,7 +5,7 @@ import { CommonProps, commonStyles } from "../commonProperties";
 export type Props = CommonProps;
 
 const defaults = {
-  fontSize: `64px`,
+  fontSize: { xs: `32px`, md: `48px`, lg: `64px` },
   fontFamily: families.serif,
 };
 
