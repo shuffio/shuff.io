@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tournaments
-permalink: /tournaments
+permalink: /
 ---
 <table id="myTable" class="display">
   <thead>
@@ -28,6 +28,9 @@ permalink: /tournaments
 </table>
 <script>
   $(document).ready( function () {
-    $('#myTable').DataTable();
+    $('#myTable').DataTable({
+      "order": [[ 5, "asc" ]],
+      "pageLength": 50
+    } );
   } );
 </script>
