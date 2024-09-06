@@ -45,6 +45,7 @@ module Jekyll
       # Add times if available
       # Filter only future dates
       # Do initial sort by date
+      # Add links
       # Add tags for filtering
       
     end
