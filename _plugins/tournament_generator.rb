@@ -39,15 +39,6 @@ module Jekyll
       end
 
       tournament.data['tournaments'] = tournament_data
-
-      ### TODO List
-      # Make date objects that can be sorted in js
-      # Add times if available
-      # Filter only future dates
-      # Do initial sort by date
-      # Add links
-      # Add tags for filtering
-      
     end
   end
 end
