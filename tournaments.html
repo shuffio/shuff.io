@@ -17,36 +17,13 @@ permalink: /tournaments
       </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>National N06</td>
-      <td>St. Petersburg, FL</td>
-      <td>Open</td>
-      <td>Mixed</td>
-      <td>Doubles</td>
-      <td>Sat, Jan 18, 2025</td>
-      <td>Sun, Jan 19, 2025</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>National N09</td>
-      <td>Clearwater, FL</td>
-      <td>Open</td>
-      <td>Any</td>
-      <td>Doubles</td>
-      <td>Thur, Feb 27, 2025</td>
-      <td>Fri, Feb 28, 2025</td>
-      <td>New Days</td>
-    </tr>
-    <tr>
-      <td>Mirror Lake Championship</td>
-      <td>St. Petersburg, FL</td>
-      <td>Amateur</td>
-      <td>Any</td>
-      <td>Singles</td>
-      <td>Sat, Mar 1, 2025</td>
-      <td>Sun, Mar 2, 2025</td>
-      <td></td>
-    </tr>
+    {% for tournament in page.tournaments %}
+      <tr>
+        {% for field in tournament %}
+          <td>{{ field }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
   </tbody>
 </table>
 <script>
