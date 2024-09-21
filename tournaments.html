@@ -1,36 +1,55 @@
 ---
 layout: page
-title: Tournaments
+title: National Tournaments 2024-2025
 permalink: /
 ---
+
 <table id="myTable" class="display">
   <thead>
-      <tr>
-          <th>Name</th>
-          <th>Location</th>
-          <th>Level</th>
-          <th>Gender</th>
-          <th>Type</th>
-          <th>Start</th>
-          <th>End</th>
-          <th>Notes</th>
-      </tr>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Level</th>
+      <th>Gender</th>
+      <th>Type</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Notes</th>
+    </tr>
   </thead>
   <tbody>
     {% for tournament in page.tournaments %}
-      <tr>
-        {% for field in tournament %}
-          <td>{{ field }}</td>
-        {% endfor %}
-      </tr>
+    <tr>
+      {% for field in tournament %}
+      <td>{{ field }}</td>
+      {% endfor %}
+    </tr>
     {% endfor %}
   </tbody>
 </table>
 <script>
-  $(document).ready( function () {
-    $('#myTable').DataTable({
-      "order": [[ 5, "asc" ]],
-      "pageLength": 50
-    } );
-  } );
+  $(document).ready(function () {
+    $("#myTable").DataTable({
+      order: [[5, "asc"]],
+      pageLength: 50,
+      language: {
+        searchPlaceholder: "Search tournament details to filter table",
+      },
+    });
+
+    $("td.dt-type-date").each(function () {
+      var dateStr = $(this).text().trim();
+      var date = new Date(dateStr);
+
+      if (!isNaN(date)) {
+        var options = { year: "numeric", month: "short", day: "numeric" };
+        var formattedDate = date.toLocaleDateString("en-US", options);
+
+        $(this).text(formattedDate);
+      } else {
+        console.warn("Invalid date format:", dateStr);
+        $(this).text("Invalid Date");
+      }
+    });
+  });
 </script>
