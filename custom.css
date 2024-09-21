@@ -41,6 +41,15 @@ html {
     }
   }
 
+  table.dataTable > tbody > tr > th,
+  table.dataTable > tbody > tr > td {
+    padding: 1.5rem 0.5rem;
+
+    @media (max-width: 640px) {
+      padding-block: 0.5rem;
+    }
+  }
+
   .dt-container .dt-search {
     label {
       display: none;
@@ -82,7 +91,9 @@ html {
       }
 
       td {
+        padding: 1.5rem 1rem;
         @media (max-width: 640px) {
+          padding: 0.5rem;
           display: flex;
           flex-direction: column;
           width: calc(100dvw - var(--container-paddingInline) * 2);
@@ -117,13 +128,12 @@ html {
     }
   }
 
-  table.dataTable.stripe > tbody > tr:nth-child(odd) > *,
-  table.dataTable.display > tbody > tr:nth-child(odd) > * {
-    padding: 1.5rem 1rem;
-
-    @media (max-width: 640px) {
-      box-shadow: none;
-      padding: 0.5rem;
+  table.dataTable.stripe > tbody > tr,
+  table.dataTable.display > tbody > tr {
+    &:nth-child(odd) > * {
+      @media (max-width: 640px) {
+        box-shadow: none;
+      }
     }
   }
 
