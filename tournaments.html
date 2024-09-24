@@ -42,7 +42,7 @@ permalink: /
       var date = new Date(dateStr);
 
       if (!isNaN(date)) {
-        var options = { year: "numeric", month: "short", day: "numeric" };
+        var options = { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" };
         var formattedDate = date.toLocaleDateString("en-US", options);
 
         $(this).text(formattedDate);
