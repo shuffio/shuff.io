@@ -10,4 +10,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
-        uses: jerryjvl/jekyll-build-action@v1s
+        uses: jerryjvl/jekyll-build-action@v1
